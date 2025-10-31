@@ -75,7 +75,16 @@ console.log(Number("0x11")); //17 hexadecimal to decimal conversion
 console.log(Number("0b11")); //3 binary to decimal conversion
 console.log(Number("0o11")); //9 octal to decimal conversion
 
-// Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.
+// Type conversion is similar to type coercion because they both convert values from one data type to another
+//  with one key difference — type coercion is implicit whereas type conversion can be either implicit or explicit.
+  // const value1 = "5";
+  // const value2 = 9;
+  // let sum = value1 + value2;
+  // console.log(sum);// "59" because of implicit type coercion
 
+  // let explicitSum = Number(value1) + value2;
+  // console.log(explicitSum);//14 because of explicit type conversion
+
+  
 // link to study
 // https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
