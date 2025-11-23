@@ -7,7 +7,7 @@
 // Arrow function IIFE synatx: ( () => { function body } )();
 ((name) => {
   console.log(`DB CONNECTED TWO ${name}`);
-})("hitesh");
+})("hitesh"); //notice how parameter is passed here
 
 // It's a function that runs as soon as it's defined
 // Why Use It? Two Main Reasons:
@@ -45,4 +45,5 @@ const counter = (function () {
 counter.increment();
 counter.increment();
 console.log(counter.getCount()); // 2
-console.log(counter.count); // undefined - it's private!
+console.log(counter.count); // undefined - as it's a private variable and no such variable exists in the global object
+//The count variable is private to the IIFE and can't be accessed directly from outside.
