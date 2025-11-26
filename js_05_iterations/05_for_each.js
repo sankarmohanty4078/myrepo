@@ -33,6 +33,13 @@ const myCoding = [
   },
 ];
 
+// Extra snippet: forEach with index and array parameters
+myCoding.forEach((item, index, arr) => {
+  console.log(`Item ${index + 1} of ${arr.length}: ${item.languageName}`);
+});
+
+// Explanation: forEach provides access to the current element, its index, and the entire array, useful for logging or side effects without creating a new array.
+
 myCoding.forEach((item) => {
   //each item is a number
   console.log(item);

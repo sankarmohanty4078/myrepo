@@ -9,6 +9,14 @@ for (const key in myObject) {
   console.log(`${key} shortcut is for ${myObject[key]}`);
 }
 
+// Extra snippet: For...in with arrays (not recommended)
+const arr = ["a", "b", "c"];
+for (const index in arr) {
+  console.log(`Index: ${index}, Value: ${arr[index]}`);
+}
+
+// Explanation: For...in iterates over enumerable properties, including inherited ones; for arrays, use for...of or traditional for loop for better performance and to avoid iterating over non-element properties.
+
 const programming = ["js", "rb", "py", "java", "cpp"];
 
 for (const key in programming) {

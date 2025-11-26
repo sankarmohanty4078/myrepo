@@ -14,6 +14,15 @@ while (arr < myArray.length) {
 
 let score = 11;
 
+// Extra snippet: Do-while loop to ensure at least one execution
+let attempts = 0;
+do {
+  console.log(`Attempt ${attempts + 1}`);
+  attempts++;
+} while (attempts < 3); // Outputs: Attempt 1 Attempt 2 Attempt 3
+
+// Explanation: Do-while loops guarantee at least one iteration, unlike while loops which may not execute if the condition is false initially.
+
 do {
   console.log(`Score is ${score}`);
   score++;

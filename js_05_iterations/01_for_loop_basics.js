@@ -8,6 +8,15 @@ for (let i = 0; i <= 10; i++) {
   //console.log(element);
 }
 
+// Extra snippet: Summing numbers from 1 to 10 using for loop
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
+  sum += i;
+}
+console.log(`Sum of numbers from 1 to 10: ${sum}`); // Outputs: Sum of numbers from 1 to 10: 55
+
+// Explanation: The for loop is ideal for scenarios where the number of iterations is known beforehand, like calculating sums or averages.
+
 // console.log(element);
 
 for (let i = 1; i <= 10; i++) {
