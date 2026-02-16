@@ -98,3 +98,4 @@ myNums.forEach((n) => {
 // map transforms each element and returns a new array.
 // filter selects certain elements and returns a smaller array.
 // reduce combines the whole array into ONE final result (sum, count, etc.).
+//comeback
