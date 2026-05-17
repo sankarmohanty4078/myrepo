@@ -1,15 +1,15 @@
 let score = "hitesh";
-//console.log(typeof score);
-//console.log(typeof(score));
+console.log(typeof score); //'string'
+console.log(typeof score); //'string'
 //both are valid ways to check datatype
 
-// let score2 = null
-// let valueInNumber2 = Number(score2)
-// console.log(typeof valueInNumber2);//number
-// console.log(valueInNumber2);//0
+let score2 = null;
+let valueInNumber2 = Number(score2);
+console.log(typeof valueInNumber2); //number
+console.log(valueInNumber2); //0
 
 let valueInNumber = Number(score);
-console.log(typeof valueInNumber);
+console.log(typeof valueInNumber); //number
 console.log(valueInNumber); //NaN Not a number
 
 //string to number conversion
@@ -21,7 +21,7 @@ console.log(valueInNumber); //NaN Not a number
 let isLoggedIn = "hitesh";
 
 let booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(booleanIsLoggedIn);
+console.log(booleanIsLoggedIn); //true
 
 // 1 => true; 0 => false
 // "" , null , undefined => false
@@ -30,8 +30,8 @@ console.log(booleanIsLoggedIn);
 let someNumber = 33;
 
 let stringNumber = String(someNumber);
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+console.log(stringNumber); //'33'
+console.log(typeof stringNumber); //'string
 
 // link to study
 // https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion

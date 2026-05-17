@@ -39,7 +39,7 @@ const scoreValue = 100.3;
 
 const id = Symbol("123");
 const anotherId = Symbol("123");
-console.log(id === anotherId);
+console.log(id === anotherId); //false
 //Both are different because Symbol creates unique identifiers
 
 // const bigNumber = 3456543576654356754n;

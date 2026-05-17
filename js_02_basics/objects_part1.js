@@ -9,6 +9,11 @@ const objWithSymbol = {
 };
 
 // 2. Adding Methods: Functions as object properties.
+const user = {
+  name: "John",
+  age: 31,
+  city: "New York",
+};
 user.greet = function () {
   console.log("Hello!");
 };
@@ -161,3 +166,26 @@ const obj2 = { a: 1 };
 console.log(obj1 === obj2); // false (different references)
 console.log(obj1 == obj2); // false
 // Deep equality requires custom function or libraries like lodash.
+
+//20.Deleting Properties: Using delete operator to remove properties from objects.
+const user2 = { name: "Charlie", age: 28 };
+delete user2.age; // { name: 'Charlie' }
+user2.name += "hi";
+console.log(user2);
+
+//experimental learning
+const user3 = { name: "Charlie", age: 28 };
+let a = "name";
+console.log(user3.a); //won't work because it looks for property 'a' which doesn't exist
+console.log(user3[a]); //works because it looks for property 'name' which exists
+console.log(user3.toString());
+
+//accessing properties and values of an object using for...in loop
+let student = {
+  name: "Alice",
+  age: 22,
+  city: "London",
+};
+for (let key in student) {
+  console.log(`${key} = ${student[key]}`);
+}
