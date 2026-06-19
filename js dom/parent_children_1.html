@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Demo</title>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM Learning on Chai aur Code</h1>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    <script>
+        // Select the UL
+        const myUl = document.querySelector('ul');
+        // Select the first LI inside UL
+        const turnGreen = myUl.querySelector('li');
+
+        //or we can also do this instead of the above 2 statements
+        const turnGreen2 = document.querySelector('ul:first-of-type li');
+        //document.querySelector('ul:first-child') will not work because the first child of ul is not li but a text node (whitespace).
+        //So we can use :first-of-type instead of :first-child to select the first li element.
+
+        // Change styles
+        turnGreen2.style.backgroundColor = 'green';
+        turnGreen2.style.padding = '10px';
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Three Ways to Add Text</title>
+
+    <style>
+        body {
+            background: #212121;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #555;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #00d4ff;
+        }
+
+        code {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Three Ways of Altering Page Content</h1>
+
+    <!-- ======================================================= -->
+    <section>
+        <h2>1. Primary Approach (Easy but Less Efficient)</h2>
+
+        <ul id="list1"></ul>
+
+        <p>
+            <b>Method Used:</b> <code>innerHTML</code>
+        </p>
+
+        <p>
+            ✔ Easy to write.<br>
+            ✔ Good for beginners.<br><br>
+
+            ❌ Browser parses the HTML string every time.<br>
+            ❌ Slower for repeated updates.<br>
+            ❌ Can introduce XSS (security) issues if user input is inserted.
+        </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <section>
+        <h2>2. Better Approach</h2>
+
+        <div id="box2"></div>
+
+        <p>
+            <b>Method Used:</b> <code>innerText</code>
+        </p>
+
+        <p>
+            ✔ Works only with text.<br>
+            ✔ Easier than creating text nodes.<br><br>
+
+            ❌ Still replaces existing content.<br>
+            ❌ Reads computed CSS before returning text, making it slower than textContent.
+        </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <section>
+        <h2>3. Best Approach (Recommended)</h2>
+
+        <ul id="list3"></ul>
+
+        <p>
+            <b>Method Used:</b>
+            <code>createTextNode()</code> +
+            <code>appendChild()</code>
+        </p>
+
+        <p>
+            ✔ Fastest.<br>
+            ✔ Creates actual DOM nodes.<br>
+            ✔ No HTML parsing.<br>
+            ✔ Safe from HTML injection.<br>
+            ✔ Preferred for dynamic DOM creation.
+        </p>
+    </section>
+
+    <script>
+
+        /*  
+           1. PRIMARY APPROACH
+             */
+
+        function addLanguage(lang) {
+
+            const li = document.createElement("li");
+
+            // Browser converts this string into HTML
+            li.innerHTML = lang;
+
+            document.getElementById("list1").appendChild(li);
+        }
+
+        addLanguage("JavaScript");
+        addLanguage("Python");
+        addLanguage("TypeScript");
+
+
+        /*  
+           2. BETTER APPROACH
+             */
+
+        const div = document.createElement("div");
+
+        div.style.background = "green";
+        div.style.padding = "10px";
+
+        // Inserts only text
+        div.innerText = "Hello from innerText";
+
+        document.getElementById("box2").appendChild(div);
+
+
+
+        /*  
+           3. BEST APPROACH
+             */
+
+        function addOptimizedLanguage(lang) {
+
+            const li = document.createElement("li");
+
+            // Create a Text Node
+            const text = document.createTextNode(lang);
+
+            // Attach text node to li
+            li.appendChild(text);
+
+            // Attach li to ul
+            document.getElementById("list3").appendChild(li);
+
+        }
+
+        addOptimizedLanguage("Java");
+        addOptimizedLanguage("Go");
+        addOptimizedLanguage("Rust");
+
+    </script>
+
+</body>
+
+</html>

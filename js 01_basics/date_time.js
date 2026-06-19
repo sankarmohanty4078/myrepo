@@ -1,6 +1,4 @@
 // date_time.js
-// 🚀 Optimized Date() summary for MERN stack & interview use
-// Focus: creation, parsing, formatting, and key getters/setters
 
 // ---------- STATIC METHODS ----------
 
@@ -80,7 +78,7 @@ console.log("parts ->", { month, day, year, hour, minute, second });
 // ✅ Convert to readable format for UI
 console.log(
   "Readable:",
-  date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })
+  date.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }),
 );
 
 // ✅ Store in DB / API (ISO string for MongoDB or REST)
@@ -101,7 +99,7 @@ console.log("After setFullYear(98) ->", legacy.getFullYear());
 // ---------- WEEKDAY & TIME DISPLAY (your requested snippet) ----------
 const newDate = new Date();
 console.log(
-  `Day index: ${newDate.getDay()} and the time: ${newDate.toLocaleTimeString()}`
+  `Day index: ${newDate.getDay()} and the time: ${newDate.toLocaleTimeString()}`,
 );
 
 // ✅ Get full weekday name using locale options
@@ -112,7 +110,7 @@ console.log(`Today is ${weekdayName}.`);
 
 // Combine both: readable weekday and full localized time
 console.log(
-  `Today is ${weekdayName}, and the time is ${newDate.toLocaleTimeString()}.`
+  `Today is ${weekdayName}, and the time is ${newDate.toLocaleTimeString()}.`,
 );
 
 // ---------- QUICK INTERVIEW NOTES ----------

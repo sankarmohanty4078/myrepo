@@ -1,7 +1,5 @@
 let score = "hitesh";
 console.log(typeof score); //'string'
-console.log(typeof score); //'string'
-//both are valid ways to check datatype
 
 let score2 = null;
 let valueInNumber2 = Number(score2);
