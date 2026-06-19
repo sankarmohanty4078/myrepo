@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ======================================================= -->
+    <section>
+
+        <h2>4. outerHTML (Replace the Entire Element)</h2>
+
+        <ul id="language4">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+        </ul>
+
+        <p>
+            <b>Method Used:</b> <code>outerHTML</code>
+        </p>
+
+        <p>
+            ✔ Replaces the entire element.<br>
+            ✔ Can change the tag, attributes and content at once.<br>
+            ✔ Very useful when the whole element needs to be redesigned.<br><br>
+
+            ❌ Original element is destroyed.<br>
+            ❌ Any event listeners attached to it are lost.<br>
+            ❌ Browser must parse new HTML again.
+        </p>
+
+    </section>
+
+    <script>
+
+        // Selecting the first list item
+        const firstLang = document.querySelector("#language4 li");
+
+        // Replace the ENTIRE <li> element
+        firstLang.outerHTML = "<li style='color:yellow'>TypeScript</li>";
+
+        //When to Use outerHTML
+
+        //✅ Replace an entire card with another card.
+        // /✅ Replace a button with a loading spinner.
+        //✅ Convert one HTML tag into another.
+        //         innerText → Change only the visible text.
+        // textContent → Change all text (including hidden text).
+        // innerHTML → Change everything inside an element.
+        // outerHTML → Replace the element itself with a completely new one.
+    </script>
+
+</body>
+
+</html>

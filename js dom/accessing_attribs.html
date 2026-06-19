@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Notes</title>
+</head>
+
+<body>
+    <h1 id="title" class="heading">DOM Learning</h1>
+    <input type="text" id="username" value="John">
+
+    <!-- # innerHTML vs textContent vs innerText -->
+    <div id="demo">
+        Hello<b>World</b>
+        <span style="display:none">
+            Hidden Text
+        </span>
+    </div>
+
+    <script>
+        // Select an element
+        let element = document.getElementById("title");
+
+        // ==========================
+        // BASIC PROPERTIES
+        // ==========================
+
+        console.log(element.id);
+        // Returns element id
+        // "title"
+
+        console.log(element.className);
+        // Returns all classes as string
+        // "heading"
+
+        console.log(element.classList);
+        // Returns class list object
+        // Can add/remove/toggle classes
+
+        console.log(element.tagName);
+        // Returns tag name
+        // "H1"
+
+        console.log(element.innerHTML);
+        // Returns HTML inside element
+
+        console.log(element.textContent);
+        // Returns all text content
+
+        console.log(element.innerText);
+        // Returns visible text only
+
+        console.log(element.style);
+        // Access inline CSS styles
+
+        console.log(element.attributes);
+        // Returns all attributes
+
+        console.log(element.parentElement);
+        // Returns parent element
+
+        console.log(element.children);
+        // Returns child elements collection
+
+        console.log(element.firstElementChild);
+        // Returns first child element
+
+        console.log(element.lastElementChild);
+        // Returns last child element
+
+        console.log(element.nextElementSibling);
+        // Returns next sibling
+
+        console.log(element.previousElementSibling);
+        // Returns previous sibling
+
+        // ==========================
+        // FORM ELEMENTS
+        // ==========================
+
+        let input = document.getElementById("username");
+
+        console.log(input.value);
+        // Gets input value
+        // "John"
+
+        input.value = "Rahul";
+        // Sets new value
+
+        console.log(input.disabled);
+        // Checks if disabled
+        // true or false
+
+        console.log(input.checked);
+        // For checkbox/radio buttons
+        // true or false
+
+        // ==========================
+        // ATTRIBUTE METHODS
+        // ==========================
+
+        console.log(element.getAttribute("id"));
+        // Returns attribute value
+        // "title"
+
+        console.log(element.getAttribute("class"));
+        // Returns class attribute
+        // "heading"
+
+        element.setAttribute("class", "newClass");
+        // Sets/updates attribute
+
+        element.removeAttribute("class");
+        // Removes attribute
+
+        console.log(element.hasAttribute("id"));
+        // Checks if attribute exists
+        // true
+
+        // ==========================
+        // LINKS & IMAGES
+        // ==========================
+
+        let link = document.querySelector("a");
+
+        console.log(link.href);
+        // Returns complete URL
+
+        let img = document.querySelector("img");
+
+        console.log(img.src);
+        // Returns image URL
+
+        // comparison of innerHTML, textContent, innerText:
+        let demo = document.getElementById("demo");
+        console.log(demo.innerHTML);//Returns ALL HTML tags + text, Preserves markup.
+        // Output:
+        //   Hello <b>World</b> 
+        //<span style="display:none">
+        //    Hidden Text
+        //</span>
+
+        console.log(demo.textContent);//Returns ALL text, Ignores HTML tags, Includes hidden text.
+
+        // Hello
+        // World
+        // Hidden Text
+
+        console.log(demo.innerText);//Returns only visible text, Ignores hidden text, Similar to what user sees on screen.
+        // Output: Hello World
+    </script>
+</body>
+
+</html>

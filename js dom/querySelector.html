@@ -1,0 +1,174 @@
+# querySelector() and querySelectorAll() Notes
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector Notes</title>
+</head>
+
+<body>
+
+    <!-- Sample Elements -->
+    <h1 id="title" class="heading">First Heading</h1>
+    <h1 class="heading">Second Heading</h1>
+    <h1 class="heading">Third Heading</h1>
+
+    <input type="text" value="Sample Input">
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+
+
+        // querySelector()
+        // Returns the FIRST matching element
+
+        console.log(document.querySelector("h1"));
+        // First h1 element
+
+        console.log(document.querySelector("#title"));
+        // Element with id="title"
+
+        console.log(document.querySelector(".heading"));
+        // First element with class="heading"
+
+        console.log(document.querySelector("input"));
+        // First input element
+
+        console.log(document.querySelector("ul li"));
+        // First li inside ul
+
+
+        // Example:
+        console.log(document.querySelector(".heading"));
+
+        // Output:
+        // <h1 id="title" class="heading">First Heading</h1>
+
+        // Only the first matching element is returned.
+
+
+
+        // querySelectorAll()
+        // Returns ALL matching elements as a NodeLis
+
+        console.log(document.querySelectorAll("h1"));
+        // NodeList containing all h1 elements
+
+        console.log(document.querySelectorAll("input[type='password']"));
+        // NodeList containing all input elements of type password
+
+        console.log(document.querySelectorAll(".heading"));
+        // NodeList containing all elements with class="heading"
+
+        console.log(document.querySelectorAll("li"));
+        // NodeList containing all li elements
+
+        console.log(document.querySelectorAll("input"));
+        // NodeList containing all input elements
+
+
+        // Example:
+        console.log(document.querySelectorAll(".heading"));
+
+        // Output:
+        // NodeList(3)
+
+        // Contains all three heading elements.
+
+
+
+
+        // Access Elements from querySelectorAll()
+
+
+        let headings = document.querySelectorAll(".heading");
+
+        console.log(headings[0]);
+        // First heading
+
+        console.log(headings[1]);
+        // Second heading
+
+        console.log(headings[2]);
+        // Third heading
+
+
+
+
+        // Loop Through NodeList
+
+
+        let allHeadings = document.querySelectorAll(".heading");
+
+        allHeadings.forEach(function (item) {
+            console.log(item);
+        });
+
+        // Prints every matching element.
+
+
+
+
+        // Difference: getElementById() vs querySelector()
+
+
+        console.log(document.getElementById("title"));
+        // Selects element by id
+
+        console.log(document.querySelector("#title"));
+        // Selects same element using CSS selector
+
+        // Both statements return the same element.
+
+
+        // querySelector() is more flexible because it can select:
+        // #title      -> id
+        // .heading    -> class
+        // h1          -> tag
+        // ul li       -> nested element
+        // Any valid CSS selector
+
+
+
+
+        // Difference: HTMLCollection vs NodeList
+
+
+
+        console.log(document.querySelectorAll(".heading"));
+        // Returns NodeList
+
+
+        // NodeList supports forEach()
+
+        document.querySelectorAll(".heading").forEach(item => {
+            console.log(item);
+        });
+
+
+        console.log(document.getElementsByClassName("heading"));
+        // Returns HTMLCollection
+
+
+        // HTMLCollection does not directly support forEach()
+        //we can convert it to an array first using Array.from() or spread operator 
+        //or toArray() method, then use forEach() on the array. example:
+        Array.from(document.getElementsByClassName("heading")).forEach(item => {
+            console.log(item);
+        });
+
+    </script>
+
+</body>
+
+</html>
+```

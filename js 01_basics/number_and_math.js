@@ -34,7 +34,7 @@ console.log(Number.isNaN(NaN)); // true
 console.log(Number.isNaN(10)); // false
 
 // parseInt() - Parses string and returns integer
-console.log(parseInt("42px")); // 42
+console.log(parseInt("42.1px")); // 42
 
 // parseFloat() - Parses string and returns floating number
 console.log(parseFloat("3.14abc")); // 3.14
