@@ -5,7 +5,7 @@ const boys_heroes = ["homelander", "billy butcher"];
 // marvel_heroes.push(dc_heroes)//here we know array can contain elements of any type including another array
 // console.log(marvel_heroes);//[ 'thor', 'Ironman', 'spiderman', [ 'superman', 'batman', 'flash' ] ]
 // console.log(marvel_heroes[3][1]);//'batman'
-const allHeroes = marvel_heroes.concat(dc_heroes, boys_heroes); //Merges multiple arrays into one array is also possible using concat method of array
+const allHeroes = marvel_heroes.concat(dc_heroes, boys_heroes); //Merges multiple arrays into one arrayis also possible using concat method of array
 console.log(allHeroes); //[ 'thor', 'Ironman', 'spiderman', 'superman', 'batman', 'flash' ]
 
 //merging arrays using spread operator(spread operator does something like breaking a glass into small pieces)
@@ -13,12 +13,12 @@ const all_new_heroes = [...marvel_heroes, ...dc_heroes];
 // console.log(all_new_heroes);
 
 //flattening an array,syntax: array_name.flat(depth_of_flattening)
-const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [[4], 5]]];
+const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]];
 const real_another_array1 = another_array.flat(1);
 const real_another_array2 = another_array.flat(2);
 const real_another_array3 = another_array.flat(Infinity); //Infinity means flattening to the maximum depth possible
-console.log(real_another_array1); //[ 1, 2, 3, 4, 5, 6, 7, 6, 7, [ [4], 5 ] ]
-console.log(real_another_array2); //[ 1, 2, 3, 4, 5, 6, 7, 6, 7, [4], 5 ]
+console.log(real_another_array1); //[ 1, 2, 3, 4, 5, 6, 7, 6, 7, [ 4, 5 ] ]
+console.log(real_another_array2); //[ 1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5 ]
 console.log(real_another_array3); //[ 1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5 ]
 
 //using static methods of Array class that return boolean or array
