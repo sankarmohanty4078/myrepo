@@ -1,0 +1,35 @@
+<!-- this document is how we used to send api requests when there was no fetch api and promises -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<img src="" alt="" height="100px" width="100px">
+
+<body>
+
+    <script>
+        const requesturl = "https://api.github.com/users/sankarmohanty4078";
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requesturl);
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const response = this.responseText;
+                const response_json = JSON.parse(response)
+                console.log(response_json);
+                document.getElementsByTagName('img')[0].setAttribute('src', response_json.avatar_url)
+                const h1 = document.createElement('h1');
+                h1.innerText = response_json.login;
+                document.body.appendChild(h1);
+
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+
+</html>
