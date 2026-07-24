@@ -173,3 +173,23 @@ c2.start(); //Started
 //thusnow when js searches or start() in c1,start(){clog("Moidfied")} is found so no further search in prototype done
 // What happened here is called property shadowing (or method shadowing).
 // The object's own property shadows (hides) the property with the same name in its prototype.
+//The prototype is just a shared storage area for methods and properties
+//Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+
+//Every object in JavaScript has a built-in property, which is called its prototype
+// /he prototype is itself an object, so the prototype will have its own prototype,
+// making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype and return undefined.
+//The property of an object that points to its prototype is not called prototype. Its name is not standard, but in practice
+//  all browsers use __proto__. The standard way to access an object's prototype is the Object.getPrototypeOf() method.
+//Suppose we just randomly create an object const myObject = {city: "Madrid",greet(){console.log(`Greetings from ${this.city}`);},};
+//So when we call myObject.toString(), the browser: it looks for toString in myObject
+//can't find it there, so looks in the prototype object of myObject for toString ,finds it there, and calls it.
+//This is an object called Object.prototype, and it is the most basic prototype, that all objects have by default. The prototype of Object.prototype is null, so it's at the end of the prototype chain:
+//What is the prototype for myObject? To find out, we can use the function Object.getPrototypeOf():
+Object.getPrototypeOf(myObject); // Object { }
+//This is an object called Object.prototype, and it is the most basic prototype, that all objects have by default.
+//  The prototype of Object.prototype is null, so it's at the end of the prototype chain
+//Prototype shadowing occurs when an object has its own property with the same name as a property in its prototype.
+//c1.start = function(){ console.log("Modified"); };
+//Now c1.start() uses the object's own start method, hiding (shadowing) Car.prototype.start,
+// while other objects like c2 still use Car.prototype.start().
