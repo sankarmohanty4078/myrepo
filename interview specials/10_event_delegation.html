@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="products">
+
+        <button>Delete <span>1</span></button>
+        <button class="buy">Buy</button>
+        <p>Some description</p>
+
+    </div>
+    <ul id="cart">
+
+        <li>
+            Apple
+            <button class="delete">
+                <span>Delete</span>
+            </button>
+        </li>
+
+        <li>
+            Banana
+            <button class="delete">
+                <span>Delete</span>
+            </button>
+        </li>
+
+    </ul>
+    <script src="10_event_delegation.js"></script>
+
+    <br>
+    <br>
+    target vs currentTarget understanding
+    <ul id="list">
+
+        <li>
+            <button>
+                <span>Delete</span>
+            </button>
+        </li>
+
+    </ul>
+    <br><br>
+    3.3. Event Delegation + data-*
+
+    <div id="actions">
+        <button data-action="save">Save</button>
+        <button data-action="delete">Delete</button>
+        <button data-action="edit">Edit</button>
+    </div>
+
+</body>
+
+</html>
